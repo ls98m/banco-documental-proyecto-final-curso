@@ -1,0 +1,50 @@
+
+ h1.title {
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+}
+
+div#divFormProfesores {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    border-radius: 1rem;
+    width: 90%;
+}
+
+div#divFormProfesores mat-form-field {
+   width: 100%;
+   margin-bottom: 1rem;
+}
+
+div#divFormProfesores div.boton a {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+ }
+
+     /*-----------VERSION PC-------------------*/
+@media (min-width: 992px) {
+    div#divFormProfesores{
+        font-size: 1.5rem;
+        width: 700px;
+    }
+
+    h1.title {
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+    }
+
+
+div#divFormProfesores mat-form-field {
+   width: 650px;
+   margin-bottom: 1rem;
+}
+    
+
+}

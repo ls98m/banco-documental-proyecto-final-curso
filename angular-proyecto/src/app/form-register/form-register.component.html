@@ -1,0 +1,30 @@
+<div id="divContenedorRegister">
+    <h1 class="title">CREAR NUEVA CUENTA</h1>
+    <form [formGroup]="formRegister">
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" formControlName="name">
+            <mat-error *ngIf="formRegister.controls['name'].invalid">Máximo 15 caracteres</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label >Email</mat-label>
+            <input matInput type="email" formControlName="email">
+            <mat-error *ngIf="formRegister.controls['email'].invalid">Formato invalido</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label >Password</mat-label>
+            <input matInput type="password" formControlName="password">
+            <mat-error *ngIf="formRegister.controls['password'].invalid">Minimo 6 caracteres</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label >Repite password</mat-label>
+            <input matInput type="password" formControlName="c_password">
+            <mat-error *ngIf="formRegister.controls['c_password'].value !== formRegister.controls['password'].value">No coincide con password</mat-error>
+        </mat-form-field>
+      <div class="boton">
+          <a id="registrarse" (click)="register()" type="button" color="primary">REGISTRARSE</a>
+          <p>O</p>
+          <a  id="login" routerLinkActive="activebutton"  [routerLink]="['/login']">INICIAR SESIÓN</a>
+      </div>
+    </form>
+    </div>

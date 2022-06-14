@@ -1,0 +1,32 @@
+<h1 class="title" *ngIf="!isEdit">CREACIÓN ALUMNOS</h1>
+<h1 class="title" *ngIf="isEdit">EDICIÓN ALUMNOS</h1>
+<div class="divContenedorFormAlumnos">
+      <form  [formGroup]="formAlumnos" >
+        <mat-form-field class="divField">
+              <input matInput formControlName="nombre" type="text" placeholder="Nombre" >
+              <mat-error class="msg" *ngIf="formAlumnos.controls['nombre'].invalid">*Requerido. Maximo 20 caracteres</mat-error>
+          </mat-form-field>
+          <mat-form-field class="divField">
+            <mat-label>Apellidos</mat-label>
+              <input matInput  type="text"  formControlName="apellidos" >
+              <mat-error class="msg" *ngIf="formAlumnos.controls['apellidos'].invalid">*Requerido. Maximo 20 caracteres</mat-error>
+          </mat-form-field>
+          <mat-form-field class="divCursoEscolar">
+            <mat-label>Curso Escolar</mat-label>
+            <mat-select formControlName="id_curso_escolar">
+                <mat-option *ngFor="let curso of cursosEscolares" [value]="curso.id">{{curso.nombre}}</mat-option>
+              </mat-select>
+              <mat-error class="msg" *ngIf="formAlumnos.controls['id_curso_escolar'].invalid">*Requerido</mat-error>
+          </mat-form-field>
+      <div  *ngIf="isEdit==false" class="boton">
+          <a  (click)="add()" type="button" color="primary"> <button mat-fab color="primary">
+            <mat-icon>check</mat-icon>
+          </button></a>
+      </div>
+      <div *ngIf="isEdit" class="boton">
+        <a (click)="edit()"  type="button" color="primary"> <button mat-fab color="primary">
+          <mat-icon>check</mat-icon>
+        </button></a>
+    </div>
+    </form>
+    </div>

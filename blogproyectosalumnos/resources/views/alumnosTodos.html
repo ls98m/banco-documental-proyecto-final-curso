@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<nav>
+</nav>
+<header>
+</header>
+<main>
+<div id="formulario">
+  <form>
+    <input id="nombre" type="text">
+    <input id="" type="text">
+
+  </form>
+</div>
+</main>
+</body>
+</html>
+<script type="module">
+  let alumnos = await getAlumnos();
+  for (const alumno of alumnos) {
+    let div = document.createElement('div');
+    let divNombre = document.createElement('div').innerHTML = alumno.nombre;
+    let divApellidos = document.createElement('div').innerHTML = alumno.apellidos;
+    let divActions = document.createElement('div');
+    let divEdit =  document.createElement('div');
+    let edit = document.createElement('a');
+    edit.setAttribute('href','http:/blogProyecto/gestion/alumnos/edit/'+alumno._id);
+    div.append(divNombre);
+    div.append(divApellidos);
+    div.append(divEdit.append(edit));
+  
+    document.body.append(div);
+  }
+  
+  async function getAlumnos(){
+  let res = await fetch('/getAlumnos');
+  if(res.ok){
+    let alumnos = await res.json();
+    alumnos = alumnos.data;
+    return alumnos;
+  } else {
+    alert("error");
+  };
+  }
+  
+  </script>
+  

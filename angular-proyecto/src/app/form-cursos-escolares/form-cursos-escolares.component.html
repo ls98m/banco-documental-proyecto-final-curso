@@ -1,0 +1,31 @@
+
+<h1  *ngIf="!isEdit" class="title">CREACIÓN CURSOS ESCOLARES</h1>
+<h1  *ngIf="isEdit" class="title">EDICIÓN CURSOS ESCOLARES</h1>
+<div class="contenedorFormCursosEscolares">
+  <form [formGroup]="formCursos" >
+    <mat-form-field class="divField">
+      <mat-label>Nombre</mat-label>
+          <input matInput formControlName="nombre" type="text">
+          <mat-error class="msg" *ngIf="formCursos.controls['nombre'].invalid">*Requerido. Maximo 10 caracteres</mat-error>
+      </mat-form-field>
+      <mat-form-field class="divField">
+        <mat-label>Temporada 0000-0000</mat-label>
+          <input matInput type="text"  formControlName="temporada">
+          <mat-error class="msg" *ngIf="formCursos.controls['temporada'].invalid">*Requerido. Formato valido 0000-0000</mat-error>
+      </mat-form-field>
+  <div *ngIf="isEdit==false" class="boton">
+      <a (click)="add()" type="button" color="basic">
+        <button mat-fab color="primary">
+          <mat-icon>check </mat-icon>
+        </button> 
+      </a>
+  </div>
+  <div *ngIf="isEdit" class="boton">
+    <a (click)="edit()"  type="button" color="primary">
+      <button mat-fab color="primary">
+        <mat-icon>check</mat-icon>
+      </button>  
+    </a>
+</div>
+</form>
+</div>

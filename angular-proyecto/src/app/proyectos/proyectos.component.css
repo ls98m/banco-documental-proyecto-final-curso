@@ -1,0 +1,99 @@
+
+@font-face {
+   font-family: 'Cards';
+   src: url('../icons/Terserah.otf');
+}
+
+
+div#divContenedorProyectos {
+   display: flex;
+   flex-flow: column wrap;
+   width: 100%;
+   text-align: center;
+}
+
+div#divContenedorProyectos h1.title {
+   color: white;
+   font-size: 2rem;
+   margin: 1rem 0;
+}
+
+div#divContenedorProyectos a#btnAdd {
+   margin: 1rem 0;
+}
+
+div#divContenedorProyectos div#divArticlesProyectos {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+mat-card.cardProyecto svg {
+   width: 35px;
+   height: 35px;
+}
+
+mat-card.cardProyecto svg.cod {
+   width: 41px;
+   height: 41px;
+}
+
+mat-card.cardProyecto {
+   margin: 1.5rem auto;
+   border: 1px solid white;
+   padding: 1.5rem 0.5rem;
+   border-radius: 1rem;
+   background: rgb(108,39,222);
+   background: linear-gradient(0deg, rgba(108,39,222,1) 0%, rgba(131,71,228,1) 52%, rgba(166,119,246,1) 82%, rgba(199,183,245,1) 100%);
+   opacity: 0.8;
+   text-align: center;
+   width: 85%;
+}
+
+mat-card.cardProyecto mat-card-title, mat-card.cardProyecto mat-card-content{
+   font-size: 1.3rem;
+   margin-bottom: 1.2rem;
+   font-family: 'Cards','Arial' ;
+   color: white;
+}
+
+mat-card.cardProyecto mat-card-actions {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-evenly;
+}
+
+mat-card.cardProyecto:hover {
+   opacity: 1;
+}
+
+/*-----------VERSION PC-------------------*/
+@media (min-width: 992px) {
+   
+   div#divContenedorProyectos h1.title {
+      font-size: 3rem;
+      margin: 1rem 0;
+   }
+   
+   mat-card.cardProyecto svg {
+      width: 40px;
+      height: 40px;
+   }
+   
+   mat-card.cardProyecto svg.cod {
+      width: 45px;
+      height: 45px;
+   }
+   
+   mat-card.cardProyecto {
+      margin: 2rem;
+      width: 18%;
+   } 
+
+}
+
+
+
+

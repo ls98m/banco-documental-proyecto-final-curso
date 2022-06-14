@@ -1,0 +1,92 @@
+div#divContenedorRegister {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 1.2rem 0;
+}
+
+div#divContenedorRegister h1{
+    color: white;
+    font-size: 1.7rem;
+}
+
+div#divContenedorRegister form{
+    display: flex;
+    width: 85%;
+    flex-flow: column nowrap;
+    background-color: aliceblue;
+    padding: 1rem 1.7rem 1.5rem 1.7rem;
+    margin: 1.2rem;
+    border-radius: 2rem;
+}
+
+div#divContenedorRegister form mat-form-field{
+    margin: 0.5rem 0;
+}
+
+
+div#divContenedorRegister form div.boton{
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+   align-items: center;
+   margin-top: 0.5rem;
+}
+
+div#divContenedorRegister form div.boton a#registrarse{
+   display: block;
+   border: 1px solid;
+   padding: 0.6rem 0;
+   width: 90%;
+   color: white;
+   background-color:  #17a2b8;
+   text-align: center;
+   letter-spacing: 0.1rem;
+   border-radius: 1.3rem;
+   margin-bottom: 0.5rem;
+ }
+ 
+ div#divContenedorRegister form div.boton a#login{
+    text-align: center;
+    display: block;
+    width: 90%;
+    font-size: 1rem;
+    color: purple;
+    letter-spacing: 0.1rem;
+    padding: 0.6rem 0;
+  }
+
+ div#divContenedorRegister form div.boton p{
+    display: flex;
+    margin: 0.5rem 0;
+  }
+
+  /*-----------VERSION PC-------------------*/
+@media (min-width: 992px) {
+    div#divContenedorRegister h1{
+        font-size: 3.5rem;
+    }
+
+    div#divContenedorRegister form{
+        width: 30%;
+        font-size: 1.3rem;
+    }
+
+    div#divContenedorRegister form div.boton p {
+        margin: 1.6rem 0;
+    }
+
+    div#divContenedorRegister form div.boton  a#login,
+    div#divContenedorRegister form div.boton  a#registrarse
+     {
+        letter-spacing: 0.2rem;
+        padding: 1.2rem 0; 
+        width: 90%;
+        font-size: 1.5rem;
+    }
+}
+
+
+

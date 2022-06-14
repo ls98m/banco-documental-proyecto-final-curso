@@ -1,0 +1,151 @@
+/* You can add global styles to this file, and also import other style files */
+  /*--------- Rubik,Koulen (NAV FONT -- Google Fonts)---------- */
+  
+  @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Rubik&display=swap');
+
+  @font-face {
+    font-family: 'Cards';
+    src: url('./app/icons/Terserah.otf');
+}
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+article.cargando {
+  margin-top: 10rem;
+}
+
+:root {
+    font-size: 15px;
+    font-family: 'Rubik', Arial;
+  }
+
+  body {
+    background-image: url('./app/icons/w1.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-flow: column wrap;
+    margin: 0 auto;
+  }
+
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  nav div a#btnAbrirMenu,nav div a#btnCerrarMenu,nav div a#btnCerrarSesion{
+  display: block;
+  margin:  0.5rem 1rem;
+  }
+ 
+
+  div#accion {
+    display: flex;
+  }
+
+  nav div#desplegable {
+      position: fixed;
+      background: rgb(0,0,0);
+      background: linear-gradient(192deg, rgba(0,0,0,1) 0%, rgba(37,37,37,1) 82%, rgba(78,78,80,1) 93%, rgba(80,80,80,1) 100%);
+      width: 100%;
+      height:100%;
+      display: flex;
+      flex-flow: column nowrap;
+      z-index: 1;
+  }
+
+  /*------- DIV CON EL CONTENIDO DEL MENU... -----------*/
+  nav div#desplegable div#menuContenido {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-flow: column nowrap;
+  }
+
+    /*------- LISTA ENLACES MENU... -----------*/
+  nav div#desplegable div#menuContenido ul {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: space-evenly;
+    justify-content: space-evenly;
+    height: 100%;
+  }  
+  nav div#desplegable div#menuContenido ul li {
+    width: 100%;
+  }
+
+  nav div#desplegable ul li a {
+    padding: 2.5rem;
+    display: block;
+    font-family: 'Koulen', Arial;
+    color: white;
+    font-size: 3.5rem;
+    letter-spacing: 0.5rem;
+  }
+
+  nav div#desplegable ul li a:hover{
+    color: #18A7EE;
+  }
+
+  nav div#desplegable ul li {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+  nav svg {
+        width: 2.5rem;
+        height: 2.7rem;
+    }
+
+
+  nav ul {
+      list-style: none;
+    }
+
+
+
+  /*------------VERSION PC-------------------*/
+  @media (min-width: 992px) {
+   
+/*------- LISTA ENLACES MENU... -----------*/
+nav div#desplegable div#menuContenido ul {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: space-evenly;
+  justify-content: space-evenly;
+  height: 100%;
+}  
+nav div#desplegable div#menuContenido ul li {
+  width: 100%;
+}
+
+nav div#desplegable ul li a {
+  padding: 2.5rem;
+  font-size: 4.7rem;
+  letter-spacing: 0.5rem;
+}
+
+nav svg {
+      width: 3rem;
+      height: 3.2rem;
+  }
+
+}
+
+  
+
+
+
+
+
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

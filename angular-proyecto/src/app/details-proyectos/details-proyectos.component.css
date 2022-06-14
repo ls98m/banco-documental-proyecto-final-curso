@@ -1,0 +1,60 @@
+
+h1.title {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+div#divContenedorDetalles{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+div#divContenedorDetalles div{
+  background-color: whitesmoke;
+  margin: 0.5rem;
+  width: 70%;
+  padding: 0.5rem;
+  border-radius: 1.2rem;
+}
+
+div#divContenedorDetalles div h2{
+    font-family: 'Cards','Arial',sans-serif;  
+}
+
+div#divContenedorDetalles div h2.label{
+    color: blue;  
+}
+
+div#divContenedorDetalles div:last-child div#divFicheros {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+}
+
+div#divContenedorDetalles div:last-child svg{
+    width: 45px;
+    height: 45px;
+}
+
+/*-----------VERSION PC-------------------*/
+@media (min-width: 992px) {
+    h1.title {
+        font-size: 3.5rem;
+    }
+    div#divContenedorDetalles{
+      margin:0 auto;
+      width: 60%;
+    }
+    div#divContenedorDetalles div h2{
+        font-size: 1.8rem;
+    }
+}
+
+

@@ -1,0 +1,103 @@
+#divFormProyectos {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+h1.title {
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#divFormProyectos div#divFormFicheros {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-evenly;
+  }
+
+  #divFormProyectos mat-form-field {
+      width: 100%;
+      margin-bottom: 1rem;
+  }
+
+  #divFormProyectos div.boton  {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: center;
+   margin: 1rem 0;
+}
+
+  div.divFile {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div#divFormFicheros p {
+      font-size: 0.7rem;
+      color: blue;
+  }
+  
+.wrapper svg {
+    width: 20px;
+    height: 20px;
+}
+
+.file-upload{
+    height:31px;
+    width:31px;
+    border-radius: 2rem;
+    position:relative;
+    border:1px solid blue;
+    display:flex;
+    justify-content:center;
+    align-items: center;  
+    overflow:hidden;
+  }
+
+  div#divFormFicheros input[type='file']{
+      height:100px;
+      width:200px;
+      position:absolute;
+      top:0;
+      left:0;
+      opacity:0;
+      cursor:pointer;
+
+    }
+
+    /*-----------VERSION PC-------------------*/
+@media (min-width: 992px) {
+    .wrapper svg {
+        width: 25px;
+        height: 25px;
+    }
+    .file-upload{
+        height:45px;
+        width:45px;
+      }
+
+     mat-form-field{
+       width:100%
+    }
+    
+    div#divFormProyectos {
+        margin: 0 auto;
+        width: 900px;
+        padding: 2rem;
+        font-size: 1.5rem;
+        align-items: center; 
+    }
+    
+        h1.title {
+            font-size: 3rem;
+        }
+}

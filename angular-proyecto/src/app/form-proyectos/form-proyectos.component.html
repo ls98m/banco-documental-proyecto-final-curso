@@ -1,0 +1,73 @@
+<h1 class="title" *ngIf="isEdit==false">CREACIÓN PROYECTOS</h1>
+<h1  class="title" *ngIf="isEdit==true">EDICIÓN PROYECTOS</h1>
+<div id="divFormProyectos">
+  <form [formGroup]="formProyecto" >
+    <mat-form-field >
+      <mat-label>Titulo</mat-label>
+      <input formControlName="titulo" type="text" matInput>
+          <mat-error *ngIf="formProyecto.controls['titulo'].invalid">*Requerido. Maximo 20 caracteres</mat-error>
+      </mat-form-field>
+      <mat-form-field  class="divDescripcion">
+        <mat-label for="descripcion">Descripcion</mat-label>
+        <input matInput formControlName="descripcion" type="text" placeholder="Descripcion" >
+        <mat-error *ngIf="formProyecto.controls['descripcion'].invalid">*Requerido. Maximo 100 caracteres</mat-error>
+    </mat-form-field>
+    <mat-form-field >
+      <mat-label>Alumno</mat-label>
+      <mat-select formControlName="id_alumno">
+          <mat-option *ngFor="let alumno of alumnos"  [value]="alumno.id">({{alumno.nombre_curso_escolar}}) {{alumno.nombre}} {{alumno.apellidos}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="formProyecto.controls['id_alumno'].invalid">*Requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Profesor</mat-label>
+      <mat-select  formControlName="id_profesor">
+          <mat-option *ngFor="let profesor of profesores"  [value]="profesor.id">{{profesor.nombre}} {{profesor.apellidos}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="formProyecto.controls['id_profesor'].invalid">*Requerido</mat-error>
+    </mat-form-field>
+    
+    <div id="divFormFicheros">
+      <div class="divFile">
+        <div class="wrapper">
+          <div class="file-upload">
+            <svg viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 128 128"><path d="M104 126H24c-5.514 0-10-4.486-10-10V12c0-5.514 4.486-10 10-10h40.687a9.932 9.932 0 0 1 7.07 2.929l39.314 39.314a9.932 9.932 0 0 1 2.929 7.07V116c0 5.514-4.486 10-10 10zM24 6c-3.309 0-6 2.691-6 6v104c0 3.309 2.691 6 6 6h80c3.309 0 6-2.691 6-6V51.313a6.044 6.044 0 0 0-1.757-4.242L68.929 7.757A5.96 5.96 0 0 0 64.687 6H24z" fill="#004df2" class="fill-fd4233"></path><path d="M95.21 80.32c-.07-.51-.48-1.15-.92-1.58-1.26-1.24-4.03-1.89-8.25-1.95-2.86-.03-6.3.22-9.92.73-1.62-.93-3.29-1.95-4.6-3.18-3.53-3.29-6.47-7.86-8.31-12.89.12-.47.22-.88.32-1.3 0 0 1.98-11.28 1.46-15.1-.07-.52-.12-.67-.26-1.08l-.17-.44c-.54-1.25-1.6-2.57-3.26-2.5l-.98-.03h-.02c-1.86 0-3.36.95-3.76 2.36-1.2 4.44.04 11.09 2.29 19.69l-.58 1.4c-1.61 3.94-3.63 7.9-5.41 11.39l-.23.45c-1.88 3.67-3.58 6.79-5.13 9.43l-1.59.84c-.12.06-2.85 1.51-3.49 1.89-5.43 3.25-9.03 6.93-9.63 9.85-.19.94-.05 2.13.92 2.68l1.54.78c.67.33 1.38.5 2.1.5 3.87 0 8.36-4.82 14.55-15.62 7.14-2.32 15.28-4.26 22.41-5.32 5.43 3.05 12.11 5.18 16.33 5.18.75 0 1.4-.07 1.92-.21.81-.22 1.49-.68 1.91-1.3.82-1.23.98-2.93.76-4.67zM36.49 99.33c.7-1.93 3.5-5.75 7.63-9.13.26-.21.9-.81 1.48-1.37-4.32 6.89-7.21 9.63-9.11 10.5zM60.95 43c1.24 0 1.95 3.13 2.01 6.07.06 2.94-.63 5-1.48 6.53-.71-2.26-1.05-5.82-1.05-8.15 0 0-.05-4.45.52-4.45zm-7.3 40.14c.87-1.55 1.77-3.19 2.69-4.92 2.25-4.25 3.67-7.57 4.72-10.3 2.1 3.82 4.72 7.07 7.79 9.67.39.32.8.65 1.22.98-6.25 1.23-11.66 2.74-16.42 4.57zm39.43-.35c-.38.23-1.47.37-2.17.37-2.26 0-5.07-1.03-9-2.72 1.51-.11 2.9-.17 4.14-.17 2.27 0 2.94-.01 5.17.56 2.22.57 2.25 1.72 1.86 1.96z" fill="#0062f5" class="fill-ff402f"></path></svg>        
+            <input  class="ficheroProyecto" accept=".pdf" (change)="changePdf($event)"  type="file">
+          </div>
+        </div>      
+        <p>PDF</p>
+        <div *ngIf="formProyecto.controls['pdf'].invalid">Solo son validos ficheros PDF</div>
+      </div>
+    <div class="divFile">
+      <div class="wrapper">
+        <div class="file-upload">
+          <svg viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 128 128"><path d="M104 126H24c-5.514 0-10-4.486-10-10V12c0-5.514 4.486-10 10-10h40.687a9.932 9.932 0 0 1 7.07 2.929l39.314 39.314a9.932 9.932 0 0 1 2.929 7.07V116c0 5.514-4.486 10-10 10zM24 6c-3.309 0-6 2.691-6 6v104c0 3.309 2.691 6 6 6h80c3.309 0 6-2.691 6-6V51.313a6.044 6.044 0 0 0-1.757-4.242L68.929 7.757A5.96 5.96 0 0 0 64.687 6H24z" fill="#004df2" class="fill-00b8df"></path><path d="M47 112h10v6H47zM37 118h10v6H37zM47 100h10v6H47zM37 106h10v6H37zM47 88h10v6H47zM37 94h10v6H37zM47 76h10v6H47zM37 82h10v6H37zM47 64h10v6H47zM37 70h10v6H37zM56 29H40c-1.1 0-2 .9-2 2v25c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V31c0-1.1-.9-2-2-2zm-3 16H43V34h10v11z" fill="#004df2" class="fill-00b8df"></path></svg>          <input  class="ficheroProyecto" accept=".zip,.rar" (change)="changeCodigo($event)"  type="file">
+        </div>
+    </div>
+    <P>CÓDIGO</P>    
+    <div *ngIf="formProyecto.controls['codigo'].invalid">Solo son validos ficheros ZIP / RAR</div>
+    </div>
+    <div class="divFile">
+      <div class="wrapper">
+        <div class="file-upload">
+          <svg viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 128 128"><g id="Powerpoint"><path d="M104 126H24c-5.5 0-10-4.5-10-10V12c0-5.5 4.5-10 10-10h40.7c2.7 0 5.2 1 7.1 2.9l39.3 39.3c1.9 1.9 2.9 4.4 2.9 7.1V116c0 5.5-4.5 10-10 10zM24 6c-3.3 0-6 2.7-6 6v104c0 3.3 2.7 6 6 6h80c3.3 0 6-2.7 6-6V51.3c0-1.6-.6-3.1-1.8-4.2L68.9 7.8C67.8 6.6 66.3 6 64.7 6H24z" fill="#1c52e6" class="fill-ff5a29"></path><path d="M76 72.4c0 3.7-1.2 6.5-3.5 8.5s-5.6 2.9-9.8 2.9h-3.1V96h-7.3V61.7h10.9c4.2 0 7.3.9 9.5 2.7s3.3 4.5 3.3 8zm-16.4 5.5H62c2.2 0 3.9-.4 5-1.3s1.7-2.2 1.7-3.9c0-1.7-.5-3-1.4-3.8s-2.4-1.2-4.4-1.2h-3.3v10.2z" fill="#1c52e6" class="fill-ff5a29"></path></g></svg>          
+          <input  class="ficheroProyecto" accept=".pdf,.ppt,.pptx,.doc,.docx,.odt" (change)="changePresentacion($event)"  type="file">
+        </div>
+      </div>
+      <P>PRESENTACIÓN</P>    
+      <div *ngIf="formProyecto.controls['presentacion'].invalid">Solo son validos ficheros PDF,PPT,PPTX,DOC,DOCX,ODT</div>
+    </div>
+    </div>
+    <div  *ngIf="isEdit==false" class="boton">
+      <a  (click)="add()" type="button" color="primary"> <button mat-fab color="primary">
+        <mat-icon>check</mat-icon>
+      </button></a>
+  </div>
+  <div *ngIf="isEdit" class="boton">
+    <a (click)="edit()"  type="button" color="primary"> <button mat-fab color="primary">
+      <mat-icon>check</mat-icon>
+    </button></a>
+</div>
+</form>
+
+</div>

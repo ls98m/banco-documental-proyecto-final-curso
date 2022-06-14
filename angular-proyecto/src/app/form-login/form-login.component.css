@@ -1,0 +1,94 @@
+diV#divContenedorLogin {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+diV#divContenedorLogin form{
+    display: flex;
+    width: 85%;
+    flex-flow: column nowrap;
+    background-color: aliceblue;
+    padding: 1rem 1.7rem 3rem 1.7rem;
+    margin: 1.2rem;
+    border-radius: 2rem;
+}
+
+div#divContenedorLogin form mat-form-field{
+    margin: 0.5rem 0;
+}
+
+
+div#divContenedorLogin h1.title{
+    color: white;
+    font-size: 1.7rem;
+}
+
+
+div#divContenedorLogin form div.boton{
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+   align-items: center;
+   margin-top: 0.5rem;
+}
+
+div#divContenedorLogin form div.boton P{
+   margin: 0.5rem 0;
+   color: black;
+ }
+
+div#divContenedorLogin form div.boton a#registrarse{
+    text-align: center;
+    display: block;
+    width: 90%;
+    font-size: 1rem;
+    color: purple;
+    letter-spacing: 0.1rem;
+    padding: 0.6rem 0;
+ }
+
+ div#divContenedorLogin form div.boton a#updatePassword {
+     margin: 1rem 0;
+ }
+ 
+ div#divContenedorLogin form div.boton a#login{
+    letter-spacing: 0.2rem;
+    text-align: center;
+    display: block;
+    width: 90%;
+    border: 1px solid;
+    padding: 0.6rem 0;
+    color: white;
+    border-radius: 1.3rem;
+    background-color:  #DC33FF;
+  }
+
+    /*-----------VERSION PC-------------------*/
+@media (min-width: 992px) {
+    div#divContenedorLogin h1.title{
+        font-size: 3.5rem;
+    }
+
+    div#divContenedorLogin form{
+        width: 30%;
+        font-size: 1.3rem;
+    }
+
+    div#divContenedorLogin form div.boton p {
+        margin: 1.6rem 0;
+    }
+
+    div#divContenedorLogin form div.boton  a#login,
+    div#divContenedorLogin form div.boton  a#registrarse
+     {
+        letter-spacing: 0.2rem;
+        padding: 1.2rem 0; 
+        width: 90%;
+        font-size: 1.5rem;
+    }
+
+   
+}

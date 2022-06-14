@@ -1,0 +1,26 @@
+<div id="divContenedorAlumnos">
+    <h1>LISTADO ALUMNOS</h1>
+    <a id="btnAdd" routerLinkActive="activebutton" (click)="prepararParaCrear()"> <button mat-fab color="basic">
+      <mat-icon>add</mat-icon>
+    </button></a>
+    <div id="divArticlesAlumno">
+      <article class="cargando" *ngIf="mostrarCargando">
+        <mat-spinner color="accent"></mat-spinner>
+      </article>
+    <article class="articleAlumno"  *ngFor="let alumno of alumnos">
+      <div class="nombre">{{ alumno['nombre'].substring(0,15) }}</div>
+      <div class="apellidos">{{ alumno['apellidos'].substring(0,15) }}</div>
+      <div class="cursosEscolares">{{ alumno['nombre_curso_escolar'] }}</div>
+      <div class="botones">
+          <a routerLinkActive="activebutton" (click)="borrar(alumno)"> 
+            <button mat-mini-fab color="warn">
+            <mat-icon>delete</mat-icon>
+          </button></a>
+          <a routerLinkActive="activebutton" (click)="prepararParaEditar(alumno)"> <button mat-mini-fab color="basic">
+            <mat-icon>edit</mat-icon>
+          </button></a>
+       </div>
+  </article>
+  </div>
+</div>
+<router-outlet></router-outlet>

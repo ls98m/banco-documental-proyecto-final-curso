@@ -1,0 +1,31 @@
+
+  <div id="contenedor">
+  <h1>LISTADO CURSOS ESCOLARES</h1>
+    <a id="btnAdd" routerLinkActive="activebutton" (click)="prepararParaCrear()">
+      <button mat-fab color="basic">
+        <mat-icon>add</mat-icon>
+      </button>  
+    </a>
+    <article class="cargando" *ngIf="mostrarCargando">
+      <mat-spinner color="accent"></mat-spinner>
+    </article>
+  <div id="divArticles">
+    <article class="articleCursoEscolar"  *ngFor="let curso of cursosEscolares">
+    <div class="nombre">{{ curso['nombre'] }}</div>
+    <div class="temporada">{{ curso['temporada'] }}</div>
+    <div id="botones">
+        <a routerLinkActive="activebutton" (click)="borrar(curso)">  
+          <button mat-mini-fab color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </a>
+        <a routerLinkActive="activebutton" (click)="prepararParaEditar(curso)">  
+          <button mat-mini-fab color="basic">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </a>
+     </div>
+</article>
+</div>
+</div>
+<router-outlet></router-outlet>

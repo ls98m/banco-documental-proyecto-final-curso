@@ -1,0 +1,30 @@
+<h1 class="title" *ngIf="isEdit==false">CREACIÓN PROFESORES</h1>
+<h1 class="title" *ngIf="isEdit==true">EDICIÓN PROFESORES</h1>
+<div id="divFormProfesores">
+<form [formGroup]="formProfesores" >
+    <mat-form-field>
+        <mat-label for="nombre">Nombre</mat-label>
+        <input matInput formControlName="nombre" type="text">
+        <mat-error *ngIf="formProfesores.controls['nombre'].invalid">*Requerido. Maximo 20 caracteres</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+              <mat-label >Apellidos</mat-label>
+              <input matInput type="text" formControlName="apellidos">
+              <mat-error *ngIf="formProfesores.controls['apellidos'].invalid">*Requerido. Maximo 20 caracteres</mat-error>
+          </mat-form-field>
+      <div *ngIf="isEdit==false" class="boton">
+          <a  (click)="add()" type="button" color="primary">  
+              <button mat-fab color="primary">
+            <mat-icon>check</mat-icon>
+          </button>  
+        </a>
+      </div>
+      <div *ngIf="isEdit==true" class="boton">
+        <a (click)="edit()"  type="button" color="primary"> 
+             <button mat-fab color="primary">
+            <mat-icon>check</mat-icon>
+          </button>  
+        </a>
+    </div>
+    </form>
+    </div>

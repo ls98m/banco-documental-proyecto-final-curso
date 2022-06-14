@@ -1,0 +1,24 @@
+<nav>
+  <div  *ngIf="!mostrar" >
+    <a id="btnAbrirMenu"(click)="desplegarMenu()"><svg  id="svgBtnAbrirMenu" data-name="Layer 1" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2px" class="stroke-1d1d1b"></circle><path d="M13 14h22M13 19h22M13 24h22M13 29h22M13 34h22" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2px" class="stroke-1d1d1b"></path></svg></a>
+  </div>
+  <div id="divBtnCerrarSesion" *ngIf="!mostrar" >
+    <a id="btnCerrarSesion" routerLink="logout"><svg viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M120.999 32.243c-2.406-4.946-7.222-8.993-10.701-8.993s-3.961 3.828-1.069 8.506c0 0 8.271 13.378 8.271 26.994 0 29.5-24 53.5-53.5 53.5s-53.5-24-53.5-53.5c0-13.616 8.27-26.994 8.27-26.994 2.893-4.678 2.412-8.506-1.068-8.506S9.406 27.297 7 32.243C7.001 32.243.5 45.61.5 58.75c0 35.014 28.486 63.5 63.5 63.5 35.014 0 63.5-28.486 63.5-63.5 0-13.14-6.501-26.507-6.501-26.507zM64 68.75c2.75 0 5-2.25 5-5v-53c0-2.75-2.25-5-5-5s-5 2.25-5 5v53c0 2.75 2.25 5 5 5z" fill="#ffffff" class="fill-373737"></path></svg></a>  
+  </div>
+  <div *ngIf="mostrar" id="desplegable">
+    <div>
+      <a id="btnCerrarMenu" (click)="desplegarMenu()"><svg data-name="Livello 1" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 0a64 64 0 1 0 64 64A64.07 64.07 0 0 0 64 0Zm0 122a58 58 0 1 1 58-58 58.07 58.07 0 0 1-58 58Z" fill="#158fd6" class="fill-000000"></path><path d="M92.12 35.79a3 3 0 0 0-4.24 0L64 59.75l-23.87-24A3 3 0 0 0 35.88 40l23.88 24-23.88 24a3 3 0 0 0 4.25 4.24L64 68.25l23.88 24A3 3 0 0 0 92.13 88L68.24 64l23.89-24a3 3 0 0 0-.01-4.21Z" fill="#158fd6" class="fill-000000"></path></svg></a>
+    </div>
+      <div id="menuContenido">
+      <ul>
+        <LI><a (click)="desplegarMenu()" routerLink="">Home</a></LI>
+        <LI> <a (click)="desplegarMenu()" routerLink="/gestion/alumnos">Alumnos</a></LI>
+        <LI><a (click)="desplegarMenu()" routerLink="/gestion/cursosescolares">Cursos</a></LI>
+        <LI><a (click)="desplegarMenu()" routerLink="/gestion/proyectos">Proyectos</a></LI>
+        <LI><a (click)="desplegarMenu()" routerLink="/gestion/profesores">Profesores</a></LI>
+      </ul>
+      </div>
+  </div>
+</nav>
+<!--HTML COMPONENTES "FALSO MAIN"-->
+<router-outlet></router-outlet>

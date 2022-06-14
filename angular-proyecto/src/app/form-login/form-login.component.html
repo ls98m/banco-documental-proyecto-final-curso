@@ -1,0 +1,21 @@
+<div id="divContenedorLogin">
+<h1 class="title">INICIAR SESIÓN</h1>
+<form [formGroup]="formLogin">
+    <mat-form-field>
+        <mat-label >Email</mat-label>
+        <input matInput type="email" formControlName="email">
+        <mat-error *ngIf="formLogin.controls['email'].invalid">*Formato invalido</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label >Password</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-error *ngIf="formLogin.controls['password'].invalid">*Requerido</mat-error>
+    </mat-form-field>
+  <div class="boton">
+      <a id="login" (click)="login()" type="button" color="primary">INICIAR SESIÓN</a>
+      <a id="updatePassword" routerLinkActive="activebutton"  [routerLink]="['/sendEmail']"> ¿Has olvidado la contraseña?</a>
+      <P>Ó</P>
+      <a id="registrarse" routerLinkActive="activebutton"  [routerLink]="['/register']"> CREAR NUEVA CUENTA</a>
+  </div>
+</form>
+</div>

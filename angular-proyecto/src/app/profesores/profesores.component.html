@@ -1,0 +1,28 @@
+<div id="divProfesores">
+<h1 class="title">LISTADO DE PROFESORES</h1>
+      <a class="btnAdd" routerLinkActive="activebutton" (click)="prepararParaCrear()">
+        <button mat-fab color="basic">
+          <mat-icon>add</mat-icon>
+        </button>
+      </a>
+      <article class="cargando" *ngIf="mostrarCargando">
+        <mat-spinner color="accent"></mat-spinner>
+      </article>
+      <div id="divArticlesProfesores">
+    <article class="articleProfesor"  *ngFor="let profesor of profesores">
+      <div class="nombre">{{ profesor['nombre']}}</div>
+      <div class="apellidos">{{ profesor['apellidos']}}</div>
+      <div class="botones">
+          <a routerLinkActive="activebutton" (click)="borrar(profesor)">
+            <button mat-mini-fab color="warn">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </a>
+          <a routerLinkActive="activebutton" (click)="prepararParaEditar(profesor)">     
+            <button mat-mini-fab color="basic">
+            <mat-icon>edit</mat-icon>
+          </button></a>
+       </div>
+  </article>
+  </div>
+  </div>

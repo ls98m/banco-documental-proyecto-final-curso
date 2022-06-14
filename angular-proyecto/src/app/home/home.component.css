@@ -1,0 +1,58 @@
+/*-------VERSION MOVIL--------------*/
+div#divGestion a svg, div#divVerTodo a svg{
+    width: 150px;
+    height: 150px;
+}
+
+div#divContenedor {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+div#divGestion a, div#divVerTodo a {
+    display: block;
+}
+div#divGestion , div#divVerTodo{
+    cursor: pointer;
+    border: 6px solid white;
+    color: white;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 2rem 0;
+    margin: 1rem 3rem;
+}
+
+div div h1 {
+    font-size: 1.7rem;
+}
+
+/*-----------VERSION PC-------------------*/
+@media (min-width: 992px) {
+    div#divGestion a svg, div#divVerTodo a svg{
+        width: 380px;
+        height: 380px;
+    }
+    div div h1 {
+        font-size: 2.5rem;
+    }
+
+    div#divContenedor {
+        margin: 5rem 3rem;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div#divContenedor div {
+        margin: 6rem 20rem;
+    }
+
+    div#divContenedor div:nth-child(1) {
+        margin-right: 0rem;
+    }
+    
+    div#divGestion , div#divVerTodo{
+        width: 25%;
+        border: 10px solid white;
+    }
+}
